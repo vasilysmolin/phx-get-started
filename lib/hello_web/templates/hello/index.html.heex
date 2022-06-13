@@ -1,0 +1,25 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p>Peace! of mind from prototype to production</p>
+</section>
+
+<section class="phx-hero">
+  <h2>Hello World, from Phoenix!</h2>
+</section>
+<%= "<b>Bold?</b>" %>
+<%= raw "<b>Bold?</b>" %>
+
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Power</th>
+  </tr>
+<%= for number <- 1..10 do %>
+  <tr>
+    <td><%= number %></td>
+    <td><%= number * number %></td>
+  </tr>
+<% end %>
+</table>
+
