@@ -74,6 +74,11 @@ defmodule Hello.ShoppingCart do
        )
   end
 
+  def prune_cart_items(%Cart{} = cart) do
+    {_, _} = Repo.delete_all(from(i in CartItem, where: i.cart_id == ^cart.id))
+    {:ok, reload_cart(cart)}
+  end
+
   def remove_item_from_cart(%Cart{} = cart, product_id) do
     {1, _} =
       Repo.delete_all(

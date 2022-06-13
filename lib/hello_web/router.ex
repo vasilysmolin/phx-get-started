@@ -23,7 +23,7 @@ defmodule HelloWeb.Router do
     get "/", PageController, :index
     resources "/products", ProductController
     resources "/cart_items", CartItemController, only: [:create, :delete]
-
+    resources "/orders", OrderController
     get "/cart", CartController, :show
     put "/cart", CartController, :update
     get "/hello", HelloController, :index
